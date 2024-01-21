@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf7a6fd37ee46709aa013efc3270aba, type: 3}
   m_Name: '[Demo] Racing Car_PixelationSettings'
   m_EditorClassIdentifier: 
-  resolution: 480
+  resolution: 900
   renderEvent: 550
   applyInSceneView: 1
   effectMaterial: {fileID: 3723506462162492137}
@@ -24,8 +24,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Effect Material
-  m_Shader: {fileID: -6465566751694194690, guid: 6b2177cf82af36949b9a8d210c2b4962,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 6b2177cf82af36949b9a8d210c2b4962, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -54,6 +53,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _PixelSize: 0.0020833334
+    - _PixelSize: 0.0011111111
     m_Colors: []
   m_BuildTextureStacks: []
