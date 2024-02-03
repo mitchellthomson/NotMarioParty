@@ -8,7 +8,13 @@ public class RouletteSlotManager : MonoBehaviour
     
     void Start()
     {
-        
+        print(transform.position);
+        print(transform.localPosition);
+
+        transform.position = lane.transform.position;
+
+        print(transform.position);
+        print(transform.localPosition);
     }
 
 }
