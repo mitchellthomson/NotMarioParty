@@ -44,6 +44,15 @@ public partial class @MGPlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""e159bc5c-e15e-499b-8e7e-a6810aa9c012"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -134,6 +143,28 @@ public partial class @MGPlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6abb0950-315e-4222-ae1c-4a34853cccfb"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""14875f2e-2149-49aa-9e97-dfc3735d9f95"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -144,6 +175,7 @@ public partial class @MGPlayerInputs: IInputActionCollection2, IDisposable
         m_CharacterControls = asset.FindActionMap("CharacterControls", throwIfNotFound: true);
         m_CharacterControls_Move = m_CharacterControls.FindAction("Move", throwIfNotFound: true);
         m_CharacterControls_Run = m_CharacterControls.FindAction("Run", throwIfNotFound: true);
+        m_CharacterControls_Jump = m_CharacterControls.FindAction("Jump", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,12 +239,14 @@ public partial class @MGPlayerInputs: IInputActionCollection2, IDisposable
     private List<ICharacterControlsActions> m_CharacterControlsActionsCallbackInterfaces = new List<ICharacterControlsActions>();
     private readonly InputAction m_CharacterControls_Move;
     private readonly InputAction m_CharacterControls_Run;
+    private readonly InputAction m_CharacterControls_Jump;
     public struct CharacterControlsActions
     {
         private @MGPlayerInputs m_Wrapper;
         public CharacterControlsActions(@MGPlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_CharacterControls_Move;
         public InputAction @Run => m_Wrapper.m_CharacterControls_Run;
+        public InputAction @Jump => m_Wrapper.m_CharacterControls_Jump;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -228,6 +262,9 @@ public partial class @MGPlayerInputs: IInputActionCollection2, IDisposable
             @Run.started += instance.OnRun;
             @Run.performed += instance.OnRun;
             @Run.canceled += instance.OnRun;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
         }
 
         private void UnregisterCallbacks(ICharacterControlsActions instance)
@@ -238,6 +275,9 @@ public partial class @MGPlayerInputs: IInputActionCollection2, IDisposable
             @Run.started -= instance.OnRun;
             @Run.performed -= instance.OnRun;
             @Run.canceled -= instance.OnRun;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
         }
 
         public void RemoveCallbacks(ICharacterControlsActions instance)
@@ -259,5 +299,6 @@ public partial class @MGPlayerInputs: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
 }

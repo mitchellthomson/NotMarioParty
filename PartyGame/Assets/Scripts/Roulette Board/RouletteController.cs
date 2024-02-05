@@ -17,7 +17,10 @@ public class RouletteController : MonoBehaviour
     [SerializeField]GameObject rouletteBallHome;
     [SerializeField] float ballSpeed = 30.0f;
     [SerializeField] float ballRadius = 180.0f;
+
+    #pragma warning disable
     private bool isSpinning = false;
+    #pragma warning restore
     
 
     public Material testMat;
