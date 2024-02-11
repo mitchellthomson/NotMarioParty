@@ -484,7 +484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.28
+      value: 0.506
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -532,34 +532,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 81bb9eea30387e442899949a80011e55, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1676850369}
+      addedObject: {fileID: 1676850370}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 81bb9eea30387e442899949a80011e55, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1676850370}
+      addedObject: {fileID: 1676850375}
   m_SourcePrefab: {fileID: 100100000, guid: 81bb9eea30387e442899949a80011e55, type: 3}
 --- !u!1 &1676850368 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 81bb9eea30387e442899949a80011e55, type: 3}
   m_PrefabInstance: {fileID: 1676850367}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1676850369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676850368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8781b22ce4f8abb42b422d8ee4ab895f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runMultiplier: 3
-  groundedGravity: -0.05
-  gravity: -9.8
-  initalJumpVelocity: 0
-  maxJumpHeight: 4
-  maxJumpTime: 0.5
 --- !u!143 &1676850370
 CharacterController:
   m_ObjectHideFlags: 0
@@ -586,6 +568,24 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &1676850375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676850368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 351ca171158318148a05130bb1511a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _runMultiplier: 3
+  _gravity: -9.8
+  _groundedGravity: -0.05
+  _initalJumpVelocity: 0
+  _maxJumpHeight: 2
+  _maxJumpTime: 0.75
 --- !u!1 &1805482888
 GameObject:
   m_ObjectHideFlags: 0
